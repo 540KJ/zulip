@@ -583,6 +583,27 @@
     </div>
 {% endif %}
 
+    <div id="foursquare" class="integration-instructions">
+      <h4>FourSquare</h4>
+
+      <p>See the nearest restaurants to you. Simply enter in a location in settings and retrieve daily alerts
+          during lunch and dinner to top nearby restaurants.</p>
+
+      <p>To maintain organisation, create a stream for FourSquare notifications and subscribe
+          all interested parties into the stream. We recommend naming it <code>FourSquare</code>.</p>
+
+      <p><code>{{ external_api_uri_subdomain }}/v1/external/foursquare?api_key=abcdefgh&amp;stream=foursquare</code></p>
+
+      <p>where <code>api_key</code> is the API key of your Zulip bot,
+      and <code>stream</code> is the stream name you want the
+      notifications sent to.</p>
+
+      <p><b>Congratulations! You're done!</b><br />  When lunch or dinner time comes,
+          you'll get a notification like this:</p>
+
+      <img class="screenshot" src="/static/images/integrations/foursquare/000.png" />
+
+    </div>
 
     <div id="freshdesk" class="integration-instructions">
       <h4>Freshdesk</h4>
