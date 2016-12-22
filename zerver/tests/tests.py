@@ -1548,6 +1548,24 @@ class ChangeSettingsTest(ZulipTestCase):
         user_profile = get_user_profile_by_email("hamlet@zulip.com")
         self.assertEqual(getattr(user_profile, param), False)
 
+    def check_for_toggle_param_patch(self, pattern, param):
+        # type: (str, str) -> None
+        self.login("hamlet@zulip.com")
+        user_profile = get_user_profile_by_email("hamlet@zulip.com")
+        json_result = self.client_patch(pattern,
+                                        {param: ujson.dumps(True)})
+        self.assert_json_success(json_result)
+        # refetch user_profile object to correctly handle caching
+        user_profile = get_user_profile_by_email("hamlet@zulip.com")
+        self.assertEqual(getattr(user_profile, param), True)
+
+        json_result = self.client_patch(pattern,
+                                        {param: ujson.dumps(False)})
+        self.assert_json_success(json_result)
+        # refetch user_profile object to correctly handle caching
+        user_profile = get_user_profile_by_email("hamlet@zulip.com")
+        self.assertEqual(getattr(user_profile, param), False)
+
     def test_successful_change_settings(self):
         # type: () -> None
         """
@@ -1616,7 +1634,7 @@ class ChangeSettingsTest(ZulipTestCase):
 
     def test_toggling_left_side_userlist(self):
         # type: () -> None
-        self.check_for_toggle_param("/json/left_side_userlist", "left_side_userlist")
+        self.check_for_toggle_param_patch("/json/settings/display", "left_side_userlist")
 
     def test_time_setting(self):
         # type: () -> None

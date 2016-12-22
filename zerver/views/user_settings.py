@@ -108,7 +108,6 @@ def json_time_setting(request, user_profile, twenty_four_hour_time=REQ(validator
 
     return json_success(result)
 
-@authenticated_json_post_view
 @has_request_variables
 def json_left_side_userlist(request, user_profile, left_side_userlist=REQ(validator=check_bool, default=None)):
     # type: (HttpRequest, UserProfile, Optional[bool]) -> HttpResponse

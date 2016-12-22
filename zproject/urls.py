@@ -288,6 +288,9 @@ v1_api_and_json_patterns = [
     url(r'^events$', rest_dispatch,
         {'GET': 'zerver.tornado.views.get_events_backend',
          'DELETE': 'zerver.tornado.views.cleanup_event_queue'}),
+
+    url(r'^settings/display$', rest_dispatch,
+        {'PATCH': 'zerver.views.user_settings.json_left_side_userlist'}),
 ]
 
 # Include the dual-use patterns twice
