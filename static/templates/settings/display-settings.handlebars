@@ -83,5 +83,18 @@
         {{t "Display time in 24-hour format (17:00 instead of 5:00 PM)" }}
       </label>
     </div>
+
+    <div class="input-group">
+      <label class="checkbox">
+        <input type="checkbox" name="translate_emoticon" id="translate_emoticon"
+        {{#if page_params.translate_emoticon}}
+          checked="checked"
+        {{/if}} />
+        <span></span>
+      </label>
+      <label for="translate_emoticon" class="inline-block">
+        {{t "Convert my typed emoticons into emoji" }}
+      </label>
+    </div>
   </form>
 </div>
