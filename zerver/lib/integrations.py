@@ -132,6 +132,7 @@ WEBHOOK_INTEGRATIONS = [
     WebhookIntegration('jira', secondary_line_text='(hosted or v5.2+)', display_name='JIRA'),
     WebhookIntegration('librato'),
     WebhookIntegration('mention', display_name='Mention'),
+    WebhookIntegration('messenger', display_name='Messenger'),
     WebhookIntegration('newrelic', display_name='New Relic'),
     WebhookIntegration('pagerduty'),
     WebhookIntegration('papertrail'),

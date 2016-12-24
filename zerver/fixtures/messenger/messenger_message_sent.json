@@ -1,0 +1,24 @@
+{
+  "sender":{
+    "id":"CAT_WORLD"
+  },
+  "recipient":{
+    "id":"John Appleseed"
+  },
+  "timestamp":1458696618268,
+  "message":{
+    "is_echo":true,
+    "app_id":1517776481860111,
+    "metadata": "DEVELOPER_DEFINED_METADATA_STRING",
+    "mid":"mid.1458696618141:b4ef9d19ec21086067",
+    "seq":51,
+    "attachments":[
+      {
+        "type":"image",
+        "payload":{
+          "url":"https://static.xx.fbcdn.net/rsrc.php/v3/yc/r/xFmW1tcxsyL.png"
+        }
+      }
+    ]
+  }
+}
