@@ -1519,6 +1519,49 @@ ignore_branches = "noisy,even-more-noisy"</pre>
       <img class="screenshot" src="/static/images/integrations/hg/001.png" />
     </div>
 
+    <div id="messenger" class="integration-instructions">
+
+      <p>
+        First, create the stream you'd like to use for Messenger Webhook notifications,
+        and subscribe all interested parties to this stream. The integration will
+        use the default stream <code>messenger</code> if no stream is supplied in
+        the hook; you still need to create the stream even if you are using this
+        default. To change the default, modify <code>stream=</code> in the below URL.
+      </p>
+
+      <p>
+        Next, create a bot named Messenger and modify the <code>api_key=.....</code> to include
+        the API key of your newly created bot. Then go to your Messenger feed
+        and the App Settings of your page. Under Products, go to
+        Webhooks > New Subscriptions and enter input the below URL
+        as the entry <code>Callback URL</code>.
+      </p>
+
+      <p><code>{{ external_api_uri_subdomain }}/v1/external/messenger?api_key=abcdefgh&amp;stream=messenger</code></p>
+
+      <p>
+        Next input your Facebook token under <code>Verify Token</code>, more information
+        about obtaining one available here:
+
+        <code>https://graph.facebook.com/app?access_token=TOKEN</code>
+
+        Under <code>Subscription Fields</code> select <code>Messages</code> and <code>message_echoes</code>.
+        Afterwards press <code>Verify and save</code>.
+      </p>
+
+      <p><img src="/static/images/integrations/messenger/002.png" /></p>
+
+      <p><img src="/static/images/integrations/messenger/003.png" /></p>
+
+      <p>
+        <b>Congratulations! You're done!</b><br />
+        Your messages will look like this:
+      </p>
+
+      <p><img src="/static/images/integrations/messenger/000.png" /></p>
+
+    </div>
+
     <div id="nagios" class="integration-instructions">
 
 
